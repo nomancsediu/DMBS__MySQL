@@ -42,15 +42,40 @@ select * from emp_details order by salary desc;
 
 select (10*20) as addition;
 
-select length('India') as total_len;
-select repeat('@', 10);
+-- select length('India') as total_len;
+-- select repeat('@', 10);
 
-select upper('India');
-select lower('BANGLADESH');
+-- select upper('India');
+-- select lower('BANGLADESH');
 
-select curdate();
-select curtime();
-select day(curdate());
+-- select curdate();
+-- select curtime();
+-- select day(curdate());
+
+# String Functions
+
+SELECT UPPER('india') AS upper_case;
+select lower('INDIA') as lower_case;
+select lcase('INDIA') as lower_case;
+
+select character_length('Bangladesh') as total_len;
+select concat('Bangladesh',' is',' in',' Asia');
+
+select reverse('madam');
+select replace('Orange is a vegetable',"vegetable","fruit");
+
+select length("         Bangladesh       ");
+select length(LTRIM("         Bangladesh       "));
+select length(RTRIM("         Bangladesh       "));
+select length(TRIM("         Bangladesh       "));
+
+select position("fruit"  in "Orange is a fruit") as name;
+
+select ascii("a");
+
+
+
+
 
 
 
