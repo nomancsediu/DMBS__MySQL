@@ -113,9 +113,93 @@ select * from student;
 delete from student 
 where name = 'Halima Akter';
 select * from student;
+select distinct city from student;
+select age from student 
+where age>22;
 
+select * from student
+order by name desc;
 
+select name from student 
+where city='Kushtia' and age >20;
 
+select name from student
+where not city='Kushtia';
+
+select name from student
+where name like 'A%';
+
+select name from student 
+where name like '%n';
+
+select name from student
+where name like '%na%';
+
+select * from student
+where city in ('Dhaka', 'Kushtia');
+
+select name from student
+where age between 18 and 22;
  
+ select name as student_name from student where name like 'A%';
+ 
+ #Aggregate Functions
+ 
+ select count(*) as total_students
+ from student;
+
+select city, count(*) as student_count
+from student
+group by city;
+
+INSERT INTO course (course_id, course_name, credit) VALUES
+(101, 'Data Structures', 3),
+(102, 'Database Systems', 4),
+(103, 'Computer Networks', 3);
+
+select * from enrollment;
+drop table enrollment;
+
+ALTER TABLE enrollment 
+add primary key (course_id);
+ALTER TABLE course
+add primary key (course_id);
+
+ALTER TABLE enrollment 
+add foreign key (course_id) references course(course_id);
+
+SELECT student_id, COUNT(course_id) AS total_courses
+FROM Enrollment
+GROUP BY student_id;
+
+
+SELECT * FROM Enrollment;
+
+INSERT INTO enrollment (enroll_id, student_id, course_id, semester) VALUES
+(1, 1, 101, 'Spring 2025'),
+(2, 2, 102, 'Spring 2025'),
+(3, 1, 103, 'Fall 2024');
+
+select course_id , count(student_id) as total_enroll
+from enrollment
+group by course_id;
+
+select min(credit) as minimum , max(credit) as maximum
+from course;
+
+select avg(age) as avg_age from student;
+
+select city, count(*) as student_count
+from student
+group by city
+having count(*) > 1; 
+
+select * from student
+order by age desc
+limit 3;
+
+
+
+
 
 
